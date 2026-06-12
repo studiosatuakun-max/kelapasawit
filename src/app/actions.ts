@@ -25,3 +25,53 @@ export async function createActivityAction(prevState: any, formData: FormData) {
     timestamp: Date.now() // Trigger useEffect untuk auto-close modal
   };
 }
+
+export async function updateBlockDataAction(prevState: any, formData: FormData) {
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  const blockName = formData.get('blockName');
+  
+  // Dalam aplikasi nyata, ambil ID blok, validasi input yang diubah (tidak wajib diisi semua), lalu perbarui database.
+  const payload = {
+    blockName,
+    harvestDate: formData.get('harvestDate'),
+    yieldKg: formData.get('yieldKg'),
+    nextHarvestDate: formData.get('nextHarvestDate'),
+    harvestStatus: formData.get('harvestStatus'),
+    fertilizationDate: formData.get('fertilizationDate'),
+    fertilizerType: formData.get('fertilizerType'),
+    pruningDate: formData.get('pruningDate'),
+    pruningNotes: formData.get('pruningNotes'),
+  };
+
+  console.log('Update Block Data:', payload);
+
+  revalidatePath('/');
+  revalidatePath('/input');
+
+  return { 
+    message: `Pembaruan data untuk ${blockName} telah berhasil disimpan ke dalam sistem.`,
+    success: true,
+    timestamp: Date.now()
+  };
+}
+
+export async function updateFinancialDataAction(prevState: any, formData: FormData) {
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  const period = formData.get('period');
+  const revenue = formData.get('revenue');
+  const expenses = formData.get('expenses');
+  const cpoPrice = formData.get('cpoPrice');
+
+  console.log('Update Financial Data:', { period, revenue, expenses, cpoPrice });
+
+  revalidatePath('/');
+  revalidatePath('/input');
+
+  return { 
+    message: `Laporan Keuangan periode ${period} berhasil diperbarui.`,
+    success: true,
+    timestamp: Date.now()
+  };
+}
