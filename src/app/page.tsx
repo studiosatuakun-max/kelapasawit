@@ -5,10 +5,10 @@ import BlockStatusGrid from '@/components/home/BlockStatusGrid';
 
 export default function Home() {
   return (
-    <div className="container mx-auto p-4 lg:p-8 space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="container mx-auto p-4 lg:p-8 space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700 dark:bg-slate-950">
       <header className="mb-2">
-        <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">Ringkasan Dashboard</h1>
-        <p className="mt-2 text-slate-500 font-medium text-lg max-w-2xl">Pantau kinerja keuangan dan operasional perkebunan Anda hari ini dengan wawasan yang jelas dan langsung ke sasaran.</p>
+        <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white">Ringkasan Dashboard</h1>
+        <p className="mt-2 text-slate-500 dark:text-slate-400 font-medium text-lg max-w-2xl">Pantau kinerja keuangan dan operasional perkebunan Anda hari ini dengan wawasan yang jelas dan langsung ke sasaran.</p>
       </header>
       
       {/* 1. Highlight Keuangan */}

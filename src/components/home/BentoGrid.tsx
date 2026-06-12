@@ -22,7 +22,7 @@ export default function BentoGrid() {
         <div className="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-yellow-400/10 blur-3xl transition-all duration-500 group-hover:bg-yellow-400/20"></div>
         <div className="relative z-10 flex h-full flex-col justify-between">
           <div>
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white dark:bg-slate-900/10 backdrop-blur-md border border-white/10">
               <Wallet className="text-yellow-400" size={28} />
             </div>
             <p className="text-sm font-semibold text-slate-400">Laba Bersih (Bulan Ini)</p>
@@ -41,21 +41,21 @@ export default function BentoGrid() {
       </div>
 
       {/* Pendapatan Kotor */}
-      <div className="group rounded-3xl border border-slate-200/60 bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-slate-300 md:col-span-1 md:row-span-1">
+      <div className="group rounded-3xl border border-slate-200 dark:border-slate-800/60 bg-white dark:bg-slate-900 p-6 shadow-sm transition-all hover:shadow-md hover:border-slate-300 md:col-span-1 md:row-span-1">
         <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 transition-transform group-hover:scale-105">
           <TrendingUp size={22} strokeWidth={2.5} />
         </div>
-        <p className="text-sm font-semibold text-slate-500">Pendapatan Kotor</p>
-        <h3 className="mt-1 text-2xl font-extrabold text-slate-900">{formatRp(financialMetrics.grossRevenue)}</h3>
+        <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Pendapatan Kotor</p>
+        <h3 className="mt-1 text-2xl font-extrabold text-slate-900 dark:text-white">{formatRp(financialMetrics.grossRevenue)}</h3>
       </div>
 
       {/* Total Pengeluaran */}
-      <div className="group rounded-3xl border border-slate-200/60 bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-slate-300 md:col-span-1 md:row-span-1">
+      <div className="group rounded-3xl border border-slate-200 dark:border-slate-800/60 bg-white dark:bg-slate-900 p-6 shadow-sm transition-all hover:shadow-md hover:border-slate-300 md:col-span-1 md:row-span-1">
         <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-red-600 transition-transform group-hover:scale-105">
           <TrendingDown size={22} strokeWidth={2.5} />
         </div>
-        <p className="text-sm font-semibold text-slate-500">Total Pengeluaran</p>
-        <h3 className="mt-1 text-2xl font-extrabold text-slate-900">{formatRp(financialMetrics.totalExpenses)}</h3>
+        <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Total Pengeluaran</p>
+        <h3 className="mt-1 text-2xl font-extrabold text-slate-900 dark:text-white">{formatRp(financialMetrics.totalExpenses)}</h3>
         <p className="mt-2 text-xs font-bold text-emerald-500 flex items-center gap-1">
           <TrendingDown size={14} /> {Math.abs(financialMetrics.expenseTrend)}% penghematan
         </p>
@@ -63,23 +63,23 @@ export default function BentoGrid() {
 
       {/* Produksi Harian */}
       <div className="group rounded-3xl border border-yellow-500/20 bg-yellow-400 p-6 shadow-md transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-400/20 md:col-span-1 md:row-span-1">
-        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-yellow-500 text-slate-900 shadow-inner">
+        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-yellow-500 text-slate-900 dark:text-white shadow-inner">
           <Factory size={22} strokeWidth={2.5} />
         </div>
         <p className="text-sm font-bold text-slate-800/80">Total Produksi Harian</p>
         <div className="mt-1 flex items-baseline gap-1">
-          <h3 className="text-3xl font-black tracking-tight text-slate-900">{formatNumber(financialMetrics.dailyProductionKg)}</h3>
+          <h3 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white">{formatNumber(financialMetrics.dailyProductionKg)}</h3>
           <span className="font-bold text-slate-800">Kg</span>
         </div>
       </div>
 
       {/* Harga TBS */}
-      <div className="group rounded-3xl border border-slate-200/60 bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-slate-300 md:col-span-1 md:row-span-1">
+      <div className="group rounded-3xl border border-slate-200 dark:border-slate-800/60 bg-white dark:bg-slate-900 p-6 shadow-sm transition-all hover:shadow-md hover:border-slate-300 md:col-span-1 md:row-span-1">
         <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-transform group-hover:scale-105">
           <Scale size={22} strokeWidth={2.5} />
         </div>
-        <p className="text-sm font-semibold text-slate-500">Harga TBS per Kg</p>
-        <h3 className="mt-1 text-2xl font-extrabold text-slate-900">{formatRp(financialMetrics.pricePerKgRp)}</h3>
+        <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Harga TBS per Kg</p>
+        <h3 className="mt-1 text-2xl font-extrabold text-slate-900 dark:text-white">{formatRp(financialMetrics.pricePerKgRp)}</h3>
         <p className="mt-2 text-xs font-medium text-slate-400">Pembaruan: Hari ini</p>
       </div>
     </div>
